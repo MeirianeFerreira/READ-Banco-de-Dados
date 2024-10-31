@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Leitura</title>
+    <link rel="stylesheet" type="text/css" href="../public/styles/style.css">
+</head>
+<body>
+    <h1>Cadastro de leitura</h1>
+    <form action="" method="post">
+        <div>
+            <label>Nome</label>
+            <input type="text" name="nome" placeholder="Insira o primeiro nome">
+        </div>
+        <div>    
+            <label>Sobrenome</label>
+            <input type="text" name="sobrenome" placeholder="Insira o sobrenome">
+        </div>
+        <div>    
+            <label>E-mail</label>
+            <input type="email" name="email" placeholder="Insira o e-mail">
+        </div>
+        <div>    
+            <label>Texto</label>
+            <input type="textarea" name="paragrafo" placeholder="Insira um parágrafo do texto">
+        </div>
+        <input id="buttonEnviar" type="submit" value="Enviar">
+    </form>   
+    
+    <div>
+        <h1>Pesquisas cadastradas</h1>
+        <table border="1" width="100%">
+            <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>E-mail</th>
+            <th>Parágrafo</th>
+            </tr>
+            <% if (pesquisadores.length > 0) { %>
+                <% for(var i=0; i < pesquisadores.length; i++) { %>
+                    <tr>
+                        <td><%-pesquisadores[i].nome %></td>
+                        <td><%-pesquisadores[i].sobrenome %></td>
+                        <td><%-pesquisadores[i].email %></td>
+                        <td><%-pesquisadores[i].paragrafo %></td>
+                    </tr>
+                <% } %>
+   
+                <% } else { %>
+                    <h1>Não há cadastros</h1>
+            <% } %>
+    </div>
+</body>
+</html>
