@@ -34,7 +34,8 @@ app.post('/cadastroleitura', function(req, res) {
       res.status(500).send('Erro ao cadastrar usuário.');
       return;
     }
-    res.send('Usuário cadastrado com sucesso!');
+    //res.send('Usuário cadastrado com sucesso!');
+     res.redirect('/cadastroleitura');
   });
 });
 
