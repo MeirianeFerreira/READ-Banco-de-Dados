@@ -15,12 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Rota principal
 app.get('/', (req, res) => {
-  res.render('cadastroleitura', { titulo: 'Home' });
+  res.render('cadastroleitura', { titulo: 'Dados' });
 });
 
 
 // Rota de cadastro (POST)
-app.post('/', function(req, res) {
+app.post('/cadastroleitura', function(req, res) {
  
   const nome= req.body.nome;
   const sobrenome =req.body.sobrenome;
@@ -34,21 +34,21 @@ app.post('/', function(req, res) {
       res.status(500).send('Erro ao cadastrar usuário.');
       return;
     }
-    //res.send('Usuário cadastrado com sucesso!');
+    res.send('Usuário cadastrado com sucesso!');
   });
 });
 
-app.get('/cadastroleitura', function(req, res){
-    conexao.connect(function(error){
-        if (error) console.log(error);
- 
-        var sql = "select * from pesquisadores";
-        conexao.query(sql, function(error, result){
-            if(error) console.log(error);
-            res.render('cadastroleitura', { pesquisadores: result });
-        })
-    })
-})
+app.get('/cadastroleitura', function(req, res) {
+  const sql = "SELECT * FROM pesquisadores";
+  conexao.query(sql, function(error, result) {
+    if (error) {
+      console.error('Erro ao buscar dados:', error);
+      res.status(500).send('Erro ao buscar dados.');
+      return;
+    }
+    res.render('cadastroleitura', { pesquisadores: result });
+  });
+});
 
 // Iniciar o servidor       
 const PORT = process.env.PORT || 3003;
