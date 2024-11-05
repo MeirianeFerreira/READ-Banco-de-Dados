@@ -1,45 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Martel+Sans&display=swap');
 * {
-    background-color: #add6d6;
+    
     font-family: 'Martel Sans';
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #003366;
-    width: 70%;
+    width: 85%;
     margin: auto;
 }
 
 h1 {
     font-family: 'Chau Philomene One';
-    font-size: 3rem;
-    text-decoration: underline;
+    font-size: 2.5rem;
+    text-decoration: double;
+    margin-top: 3%;
+    text-align: center;
+    text-transform:uppercase;
 }
 
-form {
+.section {
     display: flex;
     flex-direction: column;
-    margin: 5%;
-    padding: 5%;
-    border: solid #ff6f61 0.1rem;
+    margin: 3% auto;
+    padding: 1%;
+    border: solid #ff6f61 0.2rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: gainsboro;
 }
 
 form div {
-    padding: 2%;
+    padding: 1%;
     display: flex;
     flex-direction: column;
 }
 
 form input, form textarea {
   border-radius: 0.4rem;
+  border: solid #003366 0.1rem;
 }
 
 #buttonEnviar {
     background-color: #ff6f61;
     font-weight: bold;
-    width: 30%;
-    padding: 0.4rem;
-    margin: 1rem;
+    width: 40%;
+    padding: 0.5rem;
+    margin: 1rem auto;
     border: none;
-    align-self: center;
+    display: block;
     border-radius: 1rem;
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+ 
+th:nth-child(1), td:nth-child(1) {
+    width: 15%;
+  }
+ 
+  th:nth-child(2), td:nth-child(2) {
+    width: 15%;
+  }
+ 
+  th:nth-child(3), td:nth-child(3) {
+    width: 15%;
+  }
+ 
+  th:nth-child(4), td:nth-child(4) {
+    width: 65%;
+  }
+
